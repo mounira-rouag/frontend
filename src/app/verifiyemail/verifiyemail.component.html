@@ -6,7 +6,7 @@
             <div class="heading_container">
               <h2>Change Password</h2>
             </div>
-            <form #verifiyemail="ngForm"  (ngSubmit)="verifyEmail(verifiyemail.value)">
+            <form #verifiyemail="ngForm"  (ngSubmit)="verifyEmail(verifiyemail.value.email) ">
               <div class="form-group">
                 <input type="email" placeholder="Enter Email" class="form-control" ngModel name="email" required/>
               </div>

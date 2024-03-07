@@ -16,14 +16,17 @@ export class VerifiyemailComponent {
   verifyEmail(email: string): void {
     this.userService.verifyEmail(email).subscribe(
       response => {
-        // Email exists, navigate to change password page
-        this.router.navigateByUrl('/change-password');
+        if (response.status === 200) {
+          // Email exists, handle success
+          console.log('Email exists!');
+          this.router.navigate(['/change-password']);
+          // Handle success logic (e.g., navigate to change password)
+        } else {
+          // Handle error (email doesn't exist or other errors)
+          console.error('Error verifying email:', response.statusText);
+        }
       },
-      error => {
-        // Handle error
-        this.errorMessage = error.error.message;
-      }
-    );
-  }
-
+     
+      );
+    }
 }

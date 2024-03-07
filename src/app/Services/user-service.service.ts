@@ -25,8 +25,7 @@ export class UserServiceService {
 
   
   signIn(username: string, password: string): Observable<any> {
-    return this.http.post(
-      `${environment.apiUrl}/auth/signin`,
+    return this.http.post(`${environment.apiUrl}/auth/signin`,
       {
         username,
         password,
@@ -43,8 +42,11 @@ export class UserServiceService {
   }
 
   verifyEmail(email: string): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/users/verify-email`, email);
+    
+    return this.http.post<any>(`http://localhost:8080/api/users/findemail?email=${email}`,email); // Use template literals for string formatting
   }
+  
+
   getPublicContent(): Observable<any> {
     return this.http.get( `${environment.apiUrl}/users/all`, { responseType: 'text' });
   }

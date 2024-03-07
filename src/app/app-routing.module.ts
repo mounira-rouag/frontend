@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'firstview',            component: FirstviewComponent },
   
   
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'firstview', pathMatch: 'full' }
 
   
  

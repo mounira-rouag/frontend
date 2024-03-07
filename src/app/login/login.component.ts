@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../Services/user-service.service';
 import { Router } from '@angular/router';
 import { StorageService } from '../Services/storage.service';
@@ -8,18 +8,18 @@ import { StorageService } from '../Services/storage.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   form: any = {
     username: null,
     password: null
   };
-  isLoggedIn = false;
+  isLoggedIn = true;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
    
 
-  constructor(private authService: UserServiceService, private storageService: StorageService) { }
+  constructor(private authService: UserServiceService, private storageService: StorageService, private router: Router) { }
    // Define errorMessage property here
   ngOnInit(): void {
     if (this.storageService.isLoggedIn()) {
@@ -35,9 +35,13 @@ export class LoginComponent {
         this.storageService.saveUser(data);
 
         this.isLoginFailed = false;
+        
         this.isLoggedIn = true;
+        
         this.roles = this.storageService.getUser().roles;
-        this.reloadPage();
+       
+        // Navigate to the profile page instead of reloading
+      this.router.navigate(['/profil']);
       },
       error: err => {
         this.errorMessage = err.error.message;
@@ -46,11 +50,8 @@ export class LoginComponent {
     });
   }
 
-  reloadPage(): void {
-    window.location.reload();
-  }
-
-  /** 
+/** 
+  
   constructor(private authService: UserServiceService, private router: Router) { }
   
   signIn(signInFormData: any): void {
@@ -68,6 +69,6 @@ export class LoginComponent {
         }
       );
    
-  }*/
-
+  }
+*/
 }

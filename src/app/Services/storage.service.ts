@@ -8,9 +8,10 @@ const USER_KEY = 'auth-user';
 export class StorageService {
   constructor() {}
 
-  clean(): void {
+ 
+  signOut(): void {
     window.sessionStorage.clear();
-    window.location.href='/login';
+    window.location.href='localhost:4200/login';
   }
 
   public saveUser(user: any): void {
@@ -29,10 +30,15 @@ export class StorageService {
 
   public isLoggedIn(): boolean {
     const user = window.sessionStorage.getItem(USER_KEY);
+
     if (user) {
       return true;
+    
+    }else{
+      return false;
+
     }
 
-    return false;
+    
   }
 }

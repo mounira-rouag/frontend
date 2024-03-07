@@ -42,6 +42,9 @@
                                 Login failed: {{ errorMessage }}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
+                            <div class="alert alert-success" *ngIf="isLoggedIn">
+                                Logged in as {{ roles }}.
+                              </div>
                         </div>
                     </form>
                 </div>

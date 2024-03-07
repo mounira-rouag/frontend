@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from '../Services/user-service.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '../Models/User.model';
@@ -8,7 +8,7 @@ import { User } from '../Models/User.model';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   selectedRoles: string[] = [];
   
   isSuccessful = false;
@@ -21,6 +21,9 @@ export class SignupComponent {
     private authService: UserServiceService,
     private snackBar: MatSnackBar
   ) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   signUp(signUpData: User) {
     signUpData.roles = this.selectedRoles;
