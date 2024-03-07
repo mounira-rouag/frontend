@@ -10,6 +10,7 @@ export class StorageService {
 
   clean(): void {
     window.sessionStorage.clear();
+    window.location.href='/login';
   }
 
   public saveUser(user: any): void {

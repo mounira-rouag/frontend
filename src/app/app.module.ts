@@ -19,6 +19,8 @@ import { httpInterceptorProviders } from './Services/auth-interceptor.service';
 import { ProfileComponentComponent } from './profile-component/profile-component.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { BoardAdminComponentComponent } from './board-admin-component/board-admin-component.component';
+import { FirstviewComponent } from './firstview/firstview.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BoardAdminComponentComponent } from './board-admin-component/board-admi
     VerifiyemailComponent,
     ProfileComponentComponent,
     HomeComponentComponent,
-    BoardAdminComponentComponent
+    BoardAdminComponentComponent,
+    FirstviewComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

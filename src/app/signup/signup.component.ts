@@ -24,15 +24,22 @@ export class SignupComponent {
 
   signUp(signUpData: User) {
     signUpData.roles = this.selectedRoles;
-    this.authService.registerUser(signUpData).subscribe(
-      response => {
-        // Handle successful signup (if needed)
+    this.authService.registerUser(signUpData).subscribe({
+      next: (response) => {
+        // Handle successful signup
+        alert('Registration successful!'); // Display success message directly to the user
+  
+        // Optional: Additional actions after success (e.g., redirect to another page)
+        // ...
       },
-      error => {
+      error: (error) => {
         // Handle signup error
-        this.errorMessage = error.error.message ; // Handle potential missing message in error response
-        this.isSignUpFailed = true;
+  
+        // Extract error message (handle potential missing message)
+        const errorMessage = error.error?.message || 'An error occurred during registration. Please try again.';
+  
+        alert(errorMessage); // Display error message directly to the user
       }
-    );
+    });
   }
 }

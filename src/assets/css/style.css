@@ -206,7 +206,7 @@ p {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(130, 196, 25, 0.95);
+  background-color: #BDD248;
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -393,7 +393,7 @@ a:focus {
 }
 
 .slider_section .box a:hover {
-  background-color: #649713;
+  background-color: #BDD248;
 }
 
 .slider_section .box .baby_detail {

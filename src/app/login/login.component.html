@@ -2,44 +2,51 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <div class="contact-form">
+                <div class="contact-form border" style="padding: 20px; border-radius: 5px;">
+                    <div class="logo-container">
+                        <img src="assets/images/ACTIA.png"
+                             alt="Logo">
+
+                    </div>
+                    <div class="heading_container">
+                    </div>
                     <div class="heading_container">
                         <h2>Signin</h2>
                     </div>
                     <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="email" class="form-control" [(ngModel)]="form.username"  #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }"  required/>
+                            <input type="text" name="username" placeholder="Email" class="form-control form-control-sm"
+                                [(ngModel)]="form.username" #username="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && username.errors }" required />
                             <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
                                 Username is required!
-                              </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" [(ngModel)]="form.password"  minlength="6" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }" placeholder="Password" class="form-control"  required />
+                            <input type="password" name="password" [(ngModel)]="form.password" minlength="6"
+                                #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                                placeholder="Password" class="form-control form-control-sm" required />
                             <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
                                 <div *ngIf="password.errors['required']">Password is required</div>
-                                <div *ngIf="password.errors['minlength']">
-                                  Password must be at least 6 characters
-                                </div>
-                              </div>
+                                <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <a routerLink="/email-verifiy">Forgot your password?</a>
                         </div>
                         <div class="btn-box">
-                            <button type="submit" >Sign In</button>
+                            <button type="submit" class="btn btn-primary">Sign In</button>
                         </div>
                         <div class="form-group">
-                            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
-                              Login failed: {{ errorMessage }}
+                            <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger alert-dismissed fade show" role="alert">
+                                Login failed: {{ errorMessage }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                          </div>
-                         
+                        </div>
                     </form>
-                    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-                   
                 </div>
+
             </div>
         </div>
     </div>
-  </section>
-
+</section>

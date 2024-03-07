@@ -6,6 +6,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { VerifiyemailComponent } from './verifiyemail/verifiyemail.component';
 import { ProfileComponentComponent } from './profile-component/profile-component.component';
 import { BoardAdminComponentComponent } from './board-admin-component/board-admin-component.component';
+import { FirstviewComponent } from './firstview/firstview.component';
 
 const routes: Routes = [
   
@@ -16,6 +17,9 @@ const routes: Routes = [
   {path: 'email-verifiy',             component:   VerifiyemailComponent},
   {path: 'profil',             component:   ProfileComponentComponent},
   { path: 'admin',            component: BoardAdminComponentComponent },
+  { path: 'firstview',            component: FirstviewComponent },
+  
+  
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
   

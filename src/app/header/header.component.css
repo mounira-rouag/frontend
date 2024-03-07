@@ -1,0 +1,52 @@
+/* Contact navigation */
+.contact_nav {
+    /* Add your styles for the contact navigation here */
+  }
+  
+  /* Navigation bar */
+  .navbar {
+    /* Add your styles for the navigation bar here */
+  }
+  
+  .custom_menu-btn {
+    /* Add your styles for the custom menu button here */
+  }
+  
+  .overlay {
+    /* Add your styles for the overlay menu here */
+  }
+  
+  .overlay-content {
+    /* Add your styles for the overlay menu content here */
+  }
+  
+  .user_option {
+    /* Add your styles for the user option section here */
+  }
+  
+  /* Logo */
+  .navbar-brand {
+    margin: 0 auto; /* Center the logo horizontally */
+  }
+  
+  .navbar-brand img {
+    width: 150px; /* Adjust the width and height as needed */
+    height: 50px;
+  }
+  
+  /* Login button and search form */
+  .user_option {
+    display: flex; /* Make the elements display in a row */
+    justify-content: flex-end; /* Align elements to the right */
+  }
+  
+  .nav-link {
+    /* Add your styles for the login link here */
+  }
+  
+  .nav_search-btn {
+    /* Add your styles for the search button here */
+  }
+  
+  /* Add any other styles as needed */
+  
